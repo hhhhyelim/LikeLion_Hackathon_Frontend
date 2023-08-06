@@ -4,6 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Login, Signup, First, Home } from '../screens';
 import BottomTab from './BottomTab'; // BottomTab 추가
 import KioskLocation from '../screens/KioskLocation';
+import TestMain from '../screens/TestMain';
+import Test_kiosk from '../screens/Test_kiosk';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +32,8 @@ const AuthStack = () => {
           backgroundColor: '#FFDB7C'  
         },
       }} />
+      <Stack.Screen name="TestMain" component={TestMain}  options={{  headerShown: false }}/>
+      <Stack.Screen name="Test_kiosk" component={Test_kiosk} options={{ headerShown: false }} />
       
     </Stack.Navigator>
   );
