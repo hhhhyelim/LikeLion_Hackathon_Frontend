@@ -7,7 +7,9 @@ const colors={
   blue: '#3679fe',
   buttoncolor: '#FF7A2F',
   yellow: '#FFDB7C',
-  lightyellow: '#FBEEAC'
+  lightyellow: '#FBEEAC',
+  beige: '#FFF2D1',
+
 };
 
 export const theme={
@@ -28,4 +30,5 @@ export const theme={
   spinnerIndicator: colors.white,
   homeBackground: colors.yellow,
   testButton: colors.lightyellow,
+  locationBg: colors.beige,
 }

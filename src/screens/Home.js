@@ -93,7 +93,7 @@ const ButtonRow = styled.View`
 
 
 
-const Home = ({}) => {
+const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Container>
@@ -107,7 +107,7 @@ const Home = ({}) => {
             <ButtonText2>시험보고 선생님이 되어보세요!</ButtonText2>
           </Button1>
           <ButtonRow>
-            <Button2>
+            <Button2 onPress={() => navigation.navigate('KioskLocation')}>
               <KioskButtonText>키오스크</KioskButtonText>
             </Button2>
             <Button2>
@@ -122,6 +122,7 @@ const Home = ({}) => {
               <TrainButtonText>기차표예매</TrainButtonText>
             </Button2>
           </ButtonRow>
+          
         </ScrollView>
       </Container>
     </SafeAreaView>
