@@ -40,7 +40,7 @@ const ButtonText = styled.Text`
 
 
 
-const Test_kiosk = ({}) => {
+const KioskTest1 = ({}) => {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <Container>
@@ -70,4 +70,4 @@ const Test_kiosk = ({}) => {
     );
   };
   
-  export default Test_kiosk;
+  export default KioskTest1;

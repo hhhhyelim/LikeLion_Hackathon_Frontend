@@ -5,7 +5,7 @@ import { Login, Signup, First, Home } from '../screens';
 import BottomTab from './BottomTab'; // BottomTab 추가
 import KioskLocation from '../screens/KioskLocation';
 import TestMain from '../screens/TestMain';
-import Test_kiosk from '../screens/Test_kiosk';
+import KioskTest1 from '../screens/KioskTest1';
 
 const Stack = createStackNavigator();
 
@@ -22,8 +22,8 @@ const AuthStack = () => {
       }}
     >
       <Stack.Screen name="First" component={First} options={{ headerShown: false }} />
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="Login" component={Login} options={{headerTitle:'' }} />
+      <Stack.Screen name="Signup" component={Signup} options= {{headerTitle: ''}} />
       {/* Home 스크린은 BottomTab 내부로 이동 */}
       <Stack.Screen name="Home" component={BottomTab} options={{ headerShown: false }} />
       <Stack.Screen name="KioskLocation" component={KioskLocation} options={{ 
@@ -33,7 +33,7 @@ const AuthStack = () => {
         },
       }} />
       <Stack.Screen name="TestMain" component={TestMain}  options={{  headerShown: false }}/>
-      <Stack.Screen name="Test_kiosk" component={Test_kiosk} options={{ headerShown: false }} />
+      <Stack.Screen name="KioskTest1" component={KioskTest1} options={{ headerShown: false }} />
       
     </Stack.Navigator>
   );
