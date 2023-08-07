@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { Text, SafeAreaView, ScrollView } from 'react-native';
-import BottomTab from '../navigations/BottomTab';
 
 const Container = styled.View`
   flex: 1;
@@ -71,7 +70,7 @@ const KioskLocation = ({navigation}) => {
         </TitleContainer>
         <BoxContainer>
           <LocationText># 서울시</LocationText>
-           <Button>  
+           <Button onPress={() => navigation.navigate('KioskList')}>  
             <ButtonText>서울시 송파구</ButtonText>
           </Button>
           <Button>  

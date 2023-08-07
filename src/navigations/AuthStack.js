@@ -6,6 +6,7 @@ import BottomTab from './BottomTab'; // BottomTab 추가
 import KioskLocation from '../screens/KioskLocation';
 import TestMain from '../screens/TestMain';
 import KioskTest1 from '../screens/KioskTest1';
+import KioskList from '../screens/KioskList';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,12 @@ const AuthStack = () => {
       {/* Home 스크린은 BottomTab 내부로 이동 */}
       <Stack.Screen name="Home" component={BottomTab} options={{ headerShown: false }} />
       <Stack.Screen name="KioskLocation" component={KioskLocation} options={{ 
+        headerTitle: '',
+        headerStyle: {
+          backgroundColor: '#FFDB7C'  
+        },
+      }} />
+      <Stack.Screen name="KioskList" component={KioskList} options={{ 
         headerTitle: '',
         headerStyle: {
           backgroundColor: '#FFDB7C'  
