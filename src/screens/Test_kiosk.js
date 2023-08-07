@@ -11,7 +11,7 @@ const Head = styled.View`
   position: absolute;
   top: 0;
   width: 100%;
-  height: 338px;
+  height: 287px;
   background-color: #FFF2D1;
   border-radius: 0px 0px 30px 30px;
   `;
@@ -19,14 +19,14 @@ const Head = styled.View`
 const TitleContainer = styled.View`
   align-items: center;
   margin-top: 91px;
-`;
+
+  `;
 
 const Button = styled.TouchableOpacity`
   background-color: #F1F1F1;
   padding: 10px;
   border-radius: 30px;
   margin: 10px 18px;
-  
 
 `;
 
@@ -40,35 +40,28 @@ const ButtonText = styled.Text`
 
 
 
-
-const TestMain = ({navigation}) => {
+const Test_kiosk = ({}) => {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <Container>
           <Head />
           <TitleContainer>
-
-            <Text style={{ fontSize: 25, fontWeight: '600' }}>선생님 자격시험</Text>
+            <Text style={{ fontSize: 25, fontWeight: '600' }}>키오스크 자격시험</Text>
           </TitleContainer>
-            <Text style={{fontSize:13, fontWeight: '400', textAlign: 'center'}}>
-              {"\n"}각 테스트에 통과하시면 {"\n"}
-                해당 주제에 대한 선생님이 될 수 있는 {"\n"}
-                인증 뱃지가 주어집니다. {"\n"}{"\n"}
-                아래 버튼을 선택하면 {"\n"}
-                바로 시험이 시작되니 {"\n"}
-
-                주의하세요! {"\n"}{"\n"}</Text>
+            <Text style={{fontSize:15, fontWeight: '400', textAlign: 'center'}}>
+              {"\n"}키오스크를 실제로 사용해보신 경험은 {"\n"}
+               얼마나 되시나요? {"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>
           <Button>  
-            <ButtonText onPress= {() => navigation.navigate('Test_kiosk')}>키오스크</ButtonText>
+            <ButtonText>전혀 사용해 본 적이 없다.</ButtonText>
           </Button>
           <Button>  
-            <ButtonText>배달음식 주문</ButtonText>
+            <ButtonText>1 ~ 5번 미만</ButtonText>
           </Button>
           <Button>  
-            <ButtonText>인터넷 검색</ButtonText>
+            <ButtonText>5번 이상</ButtonText>
           </Button>
           <Button>  
-            <ButtonText>기차표 예매</ButtonText>
+            <ButtonText>처음 보는 키오스크도{"\n"} 자유롭게 사용 가능</ButtonText>
           </Button>
         
         
@@ -77,4 +70,4 @@ const TestMain = ({navigation}) => {
     );
   };
   
-  export default TestMain;
+  export default Test_kiosk;

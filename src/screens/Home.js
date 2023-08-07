@@ -102,7 +102,7 @@ const Home = ({ navigation }) => {
           <Text style={{ fontSize: 20, fontWeight: '500' }}>목록</Text>
         </TitleContainer>
         <ScrollView>
-          <Button1>
+          <Button1 onPress={() => navigation.navigate('TestMain')}>
             <ButtonText>시험</ButtonText>
             <ButtonText2>시험보고 선생님이 되어보세요!</ButtonText2>
           </Button1>
