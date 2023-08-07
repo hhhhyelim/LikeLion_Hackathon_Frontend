@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { Text, SafeAreaView, ScrollView } from 'react-native';
-
+import BottomTab from '../navigations/BottomTab';
 
 const Container = styled.View`
   flex: 1;
@@ -125,6 +125,7 @@ const Home = ({ navigation }) => {
           
         </ScrollView>
       </Container>
+      
     </SafeAreaView>
   );
 };

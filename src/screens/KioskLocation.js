@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { Text, SafeAreaView, ScrollView } from 'react-native';
-
+import BottomTab from '../navigations/BottomTab';
 
 const Container = styled.View`
   flex: 1;
@@ -22,12 +22,14 @@ const Head = styled.View`
 const TitleContainer = styled.View`
   align-items: center;
   margin-top: 91px;
-`;
+
+  `;
 
 const BoxContainer = styled.View`
-  width: 360px;
-  height: 411px;
-  background-color: yellow;
+  width: 370px;
+  height: 450px;
+  
+  background-color: #FFF2D1;
   border-radius: 30px;
   margin-top: 29px;
   margin-left: 19px;
@@ -40,7 +42,26 @@ const LocationText = styled.Text`
   
 `;
 
-const KioskLocation = ({}) => {
+const Button = styled.TouchableOpacity`
+  background-color: white;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 15px 18px;
+  
+
+`;
+
+const ButtonText = styled.Text`
+  color: black;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  
+`;
+
+
+
+const KioskLocation = ({navigation}) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Container>
@@ -50,9 +71,22 @@ const KioskLocation = ({}) => {
         </TitleContainer>
         <BoxContainer>
           <LocationText># 서울시</LocationText>
+           <Button>  
+            <ButtonText>서울시 송파구</ButtonText>
+          </Button>
+          <Button>  
+            <ButtonText>서울시 강서구</ButtonText>
+          </Button>
+          <Button>  
+            <ButtonText>서울시 노원구</ButtonText>
+          </Button>
+          <Button>  
+            <ButtonText>서울시 은평구</ButtonText>
+          </Button>
         </BoxContainer>
       
       </Container>
+  
     </SafeAreaView>
   );
 };
