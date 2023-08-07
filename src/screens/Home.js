@@ -12,14 +12,14 @@ const Head = styled.View`
   position: absolute;
   top: 0;
   width: 100%;
-  height: 281px;
+  height: 50%;
   background-color: ${({ theme }) => theme.homeBackground};
   border-radius: 0px 0px 30px 30px;
 `;
 
 const TitleContainer = styled.View`
   align-items: center;
-  margin-top: 91px;
+  margin-top: 23%;
 `;
 
 
@@ -27,7 +27,7 @@ const Button1 = styled.TouchableOpacity`
   background-color: ${({ theme }) => theme.testButton};
   padding: 10px 20px;
   border-radius: 10px;
-  margin: 12px 18px;
+  margin: 5% 18px;
 `;
 
 const ButtonText = styled.Text`

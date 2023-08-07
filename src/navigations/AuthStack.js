@@ -39,9 +39,7 @@ const AuthStack = () => {
       }} />
       <Stack.Screen name="KioskList" component={KioskList} options={{ 
         headerTitle: '',
-        headerStyle: {
-          backgroundColor: '#FFDB7C'  
-        },
+      
       }} />
       <Stack.Screen name="TestMain" component={TestMain}  options={{  headerShown: false }}/>
       <Stack.Screen name="KioskTest1" component={KioskTest1} options={{ headerShown: false }} />
