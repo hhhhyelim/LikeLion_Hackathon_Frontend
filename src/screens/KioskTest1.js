@@ -11,7 +11,7 @@ const Head = styled.View`
   position: absolute;
   top: 0;
   width: 100%;
-  height: 338px;
+  height: 287px;
   background-color: #FFF2D1;
   border-radius: 0px 0px 30px 30px;
   `;
@@ -40,32 +40,28 @@ const ButtonText = styled.Text`
 
 
 
-const TestMain = ({}) => {
+const KioskTest1 = ({navigation}) => {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <Container>
           <Head />
           <TitleContainer>
-            <Text style={{ fontSize: 30, fontWeight: '700' }}>선생님 자격시험</Text>
+            <Text style={{ fontSize: 30, fontWeight: '700' }}>키오스크 자격시험</Text>
           </TitleContainer>
             <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}>
-              {"\n"}각 테스트에 통과하시면 {"\n"}
-                해당 주제에 대한 선생님이 될 수 있는 {"\n"}
-                인증 뱃지가 주어집니다. {"\n"}{"\n"}
-                아래 버튼을 선택하면 {"\n"}
-                바로 시험이 시작되니 {"\n"}
-                주의하세요! {"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>
+              {"\n"}키오스크를 실제로 사용해보신 경험은 {"\n"}
+               얼마나 되시나요? {"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>
           <Button>  
-            <ButtonText>키오스크</ButtonText>
+            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>전혀 사용해 본 적이 없다.</ButtonText>
           </Button>
           <Button>  
-            <ButtonText>배달음식 주문</ButtonText>
+            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>1 ~ 5번 미만</ButtonText>
           </Button>
           <Button>  
-            <ButtonText>인터넷 검색</ButtonText>
+            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>5번 이상</ButtonText>
           </Button>
           <Button>  
-            <ButtonText>기차표 예매</ButtonText>
+            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>처음 보는 키오스크도 자유롭게 사용 가능</ButtonText>
           </Button>
         
         
@@ -74,4 +70,4 @@ const TestMain = ({}) => {
     );
   };
   
-  export default TestMain;
+  export default KioskTest1;

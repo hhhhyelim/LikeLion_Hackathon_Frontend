@@ -59,7 +59,7 @@ const TestMain = ({navigation}) => {
 
                 주의하세요! {"\n"}{"\n"}</Text>
           <Button>  
-            <ButtonText onPress= {() => navigation.navigate('Test_kiosk')}>키오스크</ButtonText>
+            <ButtonText onPress= {() => navigation.navigate('KioskTest1')}>키오스크</ButtonText>
           </Button>
           <Button>  
             <ButtonText>배달음식 주문</ButtonText>
