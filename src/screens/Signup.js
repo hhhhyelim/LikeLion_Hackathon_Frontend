@@ -5,6 +5,8 @@ import {Input, Button} from '../components';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { validateEmail, removeWhitespace } from '../utils/common';
 import { ProgressContext } from '../contexts';
+import DatePicker from 'react-datepicker';
+
 
 const Container = styled.View`
   flex: 1;
@@ -31,12 +33,15 @@ const Signup = ({}) => {
   const [email, setEmail] =useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [birth, setBirth] =useState('');
+  const [selectDate, setselectDate]=useState(new Date());
   const [errorMessage, setErrorMessage] = useState('');
   const [disabled, setDisaled] = useState(true);
 
   const emailRef = useRef();
   const passwordRef = useRef(); // 아이디 다 치면 비밀번호 입력하게끔
   const passwordConfirmRef = useRef();
+  const birthRef = useRef();
   const didMountRef = useRef();
 
   useEffect(() => {
@@ -50,6 +55,9 @@ const Signup = ({}) => {
         _errorMessage ='비밀번호가 다릅니다';
       } else if(!name){
         _errorMessage ='이름을 입력하세요';
+      }else if(!birth){
+        _errorMessage ='생년월일을 입력하세요';
+      
       } else {
         _errorMessage ='';
       }
@@ -60,8 +68,8 @@ const Signup = ({}) => {
   }, [name, email, password, passwordConfirm]);
 
   useEffect(() => {
-    setDisaled(!(name && email && password && passwordConfirm &&!errorMessage));
-  }, [name, email, password, passwordConfirm, errorMessage]);
+    setDisaled(!(name && email && password && passwordConfirm && birth &&!errorMessage));
+  }, [name, email, password, passwordConfirm, birth, errorMessage]);
 
   const _handleSignupButtonPress = async () => {
     try{
@@ -94,7 +102,7 @@ const Signup = ({}) => {
         />
         <Input 
           ref={emailRef}
-          label="이메일"
+          label="이메일(아이디)"
           value={email}
           onChangeText={text => setEmail(removeWhitespace(text))}
           onSubmitEditing={()=>passwordRef.current.focus()}
@@ -108,11 +116,10 @@ const Signup = ({}) => {
           onChangeText={text =>setPassword(removeWhitespace(text))}
           onSubmitEditing={()=>passwordConfirmRef.current.focus()}
           placeholder="비밀번호"
-          returnKeyType="done" 
+          returnKeyType="next" 
           isPassword
         />
         <Input 
-          ref={passwordConfirmRef}
           label="비밀번호 확인"
           value={passwordConfirm}
           onChangeText={text => setPasswordConfirm(removeWhitespace(text))}
@@ -121,6 +128,7 @@ const Signup = ({}) => {
           returnKeyType="done" 
           isPassword
         />
+       
         <ErrorText>{errorMessage}</ErrorText>
         <Button title="회원가입" onPress={_handleSignupButtonPress} disabled={disabled} />
       </Container>
