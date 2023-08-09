@@ -23,7 +23,7 @@ const TitleContainer = styled.View`
 `;
 
 const Button = styled.TouchableOpacity`
-  background-color: #F1F1F1;
+  background-color: #FF7A2F;
   width: 400px;
   height: 50px;
   margin-left: 40px;
@@ -70,3 +70,5 @@ const KioskResult = ({navigation}) => {
   };
   
   export default KioskResult;
+
+  

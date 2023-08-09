@@ -12,7 +12,7 @@ const Head = styled.View`
   position: absolute;
   top: 0;
   width: 100%;
-  height: 281px;
+  height: 50%;
   background-color: ${({ theme }) => theme.homeBackground};
   border-radius: 0px 0px 30px 30px;
 `;

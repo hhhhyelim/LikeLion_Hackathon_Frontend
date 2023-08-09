@@ -23,7 +23,7 @@ const TitleContainer = styled.View`
 
 const Button = styled.TouchableOpacity`
   background-color: #F1F1F1;
-  padding: 20px 20px;
+  padding: 15% 10%;
   border-radius: 30px;
   margin: 12px 18px;
   
@@ -39,6 +39,14 @@ const ButtonText = styled.Text`
 `;
 
 
+const BlankContainer = styled.View`
+  align-items: center;
+  margin-top: 91px;
+  width: 174px;
+  height: 174px;
+`;
+
+
 
 const KioskTest1 = ({navigation}) => {
     return (
@@ -48,9 +56,12 @@ const KioskTest1 = ({navigation}) => {
           <TitleContainer>
             <Text style={{ fontSize: 30, fontWeight: '700' }}>키오스크 자격시험</Text>
           </TitleContainer>
-            <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}>
+            <Text style={{fontSize: 25, fontWeight: '400', textAlign: 'center'}}>
               {"\n"}키오스크를 실제로 사용해보신 경험은 {"\n"}
-               얼마나 되시나요? {"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>
+               얼마나 되시나요? </Text>
+          <BlankContainer>
+
+          </BlankContainer>
           <Button>  
             <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>전혀 사용해 본 적이 없다.</ButtonText>
           </Button>

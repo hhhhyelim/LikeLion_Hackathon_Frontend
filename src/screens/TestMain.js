@@ -11,7 +11,7 @@ const Head = styled.View`
   position: absolute;
   top: 0;
   width: 100%;
-  height: 338px;
+  height: 50%;
   background-color: #FFF2D1;
   border-radius: 0px 0px 30px 30px;
   `;
