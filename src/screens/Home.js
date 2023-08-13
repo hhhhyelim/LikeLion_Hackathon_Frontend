@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { Text, SafeAreaView, ScrollView } from 'react-native';
-import BottomTab from '../navigations/BottomTab';
 
 const Container = styled.View`
   flex: 1;
@@ -107,7 +106,7 @@ const Home = ({ navigation }) => {
             <ButtonText2>시험보고 선생님이 되어보세요!</ButtonText2>
           </Button1>
           <ButtonRow>
-            <Button2 onPress={() => navigation.navigate('KioskLocation')}>
+            <Button2 onPress={() => navigation.navigate('KioskList')}>
               <KioskButtonText>키오스크</KioskButtonText>
             </Button2>
             <Button2>
