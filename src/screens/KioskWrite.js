@@ -91,7 +91,7 @@ const KioskWrite = ({navigation}) => {
     setDisaled(!(title && location && content));
   }, [title, location, content]);
 
-  
+  /*
   const handlePostSubmit = () => {
     const newPost = {
       id: new Date().getTime(), // 임시로 시간을 ID로 사용
@@ -104,7 +104,7 @@ const KioskWrite = ({navigation}) => {
     navigation.navigate('KioskList'); // 게시물 리스트로 이동
   };
 
-
+*/
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <KeyboardAwareScrollView
@@ -143,7 +143,7 @@ const KioskWrite = ({navigation}) => {
             placeholder="내용을 작성해주세요"
           />
         </Contents>
-        <SubmitButton onPress={handlePostSubmit} disabled={disabled} isFilled={!disabled}>  
+        <SubmitButton onPress={() => navigation.navigate('KioskList')} disabled={disabled} isFilled={!disabled}>  
             <ButtonText isFilled={!disabled}>게시물 올리기</ButtonText>
         </SubmitButton>
       </Container>

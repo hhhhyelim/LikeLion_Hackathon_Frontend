@@ -34,7 +34,7 @@ const Button = styled.TouchableOpacity`
 `;
 
 const ButtonText = styled.Text`
-  color: 'black';
+  color: black;
   font-size: 25px;
   font-weight: 400;
   text-align: center;
@@ -60,7 +60,7 @@ const KioskResult = ({navigation}) => {
                 {"\n"}키오스크 선생님의 자격이 주어졌습니다!{"\n"}
                 {"\n"}지금 바로 게시글을 작성하고 학생을 모집해보세요!</Text>
           <Button>  
-            <ButtonText onPress= {() => navigation.navigate('KioskTest1')}>학생모집 게시글 작성하러 가기 </ButtonText>
+            <ButtonText onPress= {() => navigation.navigate('Home')}>학생모집 게시글 작성하러 가기 </ButtonText>
           </Button>
         
         

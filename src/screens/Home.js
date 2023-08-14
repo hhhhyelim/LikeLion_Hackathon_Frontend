@@ -59,6 +59,7 @@ const KioskButtonText = styled.Text`
   font-size: 13px;
   font-weight: 300;
   text-align: center;
+  margin-top: 80%;
   
 `;
 const DeliveryButtonText = styled.Text`
@@ -66,6 +67,8 @@ const DeliveryButtonText = styled.Text`
   font-size: 13px;
   font-weight: 300;
   text-align: center;
+  margin-top: 80%;
+  margin-top: 80%;
   
 `;
 const SearchButtonText = styled.Text`
@@ -73,6 +76,7 @@ const SearchButtonText = styled.Text`
   font-size: 13px;
   font-weight: 300;
   text-align: center;
+  margin-top: 80%;
   
 `;
 const TrainButtonText = styled.Text`
@@ -80,7 +84,7 @@ const TrainButtonText = styled.Text`
   font-size: 13px;
   font-weight: 300;
   text-align: center;
-  
+  margin-top: 80%;
 `;
 
 

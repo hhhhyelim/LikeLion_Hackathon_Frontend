@@ -3,7 +3,6 @@ import { ThemeContext } from 'styled-components/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Login, Signup, First, Home } from '../screens';
 import BottomTab from './BottomTab'; // BottomTab 추가
-
 import TestMain from '../screens/TestMain';
 import KioskTest1 from '../screens/KioskTest1';
 import KioskTest2 from '../screens/KioskTest2';
@@ -31,6 +30,7 @@ const AuthStack = () => {
       <Stack.Screen name="Signup" component={Signup} options= {{headerTitle: ''}} />
       {/* Home 스크린은 BottomTab 내부로 이동 */}
       <Stack.Screen name="Home" component={BottomTab} options={{ headerShown: false }} />
+      <Stack.Screen name="Mypage" component={BottomTab} options={{ headerShown: false }} />
       <Stack.Screen name="KioskList" component={KioskList} options={{ 
         headerTitle: '',
       }} />
