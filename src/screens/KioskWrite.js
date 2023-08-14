@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/native';
 import { Text, SafeAreaView } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'; 
+
+
 const Container = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.background};
@@ -72,13 +74,14 @@ color: ${({ isFilled }) =>
 `;
 
 const KioskWrite = ({navigation}) => {
+  //const { addPost } = useKiosk(); // KioskProvider로부터 addPost 함수를 가져옴
+
   const [title, setTitle] = useState(""); // 제목 저장
   const [location, setLocation]=useState("");
   const [content, setContent] = useState("");
   const [disabled, setDisaled] = useState(true);
   
-  const { addPost } = useKiosk(); // KioskProvider로부터 addPost 함수를 가져옴
-
+  
 
   const onChangeTitle = (payload) => setTitle(payload);
   const onChangeLocation = (payload) => setLocation(payload);
@@ -90,11 +93,15 @@ const KioskWrite = ({navigation}) => {
 
   
   const handlePostSubmit = () => {
-    if (title && location && content) {
-      const newPost = { title, location, content };
-      addPost(newPost); // 게시물 추가
-      navigation.navigate('KioskList');
-    }
+    const newPost = {
+      id: new Date().getTime(), // 임시로 시간을 ID로 사용
+      title,
+      location,
+      content,
+    };
+
+    addPost(newPost); // 게시물 추가
+    navigation.navigate('KioskList'); // 게시물 리스트로 이동
   };
 
 

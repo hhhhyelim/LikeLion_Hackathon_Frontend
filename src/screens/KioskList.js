@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { Text, SafeAreaView, ScrollView } from 'react-native';
+import { Text, SafeAreaView, ScrollView, FlatList } from 'react-native';
 
 const Container = styled.View`
   flex: 1;
@@ -31,6 +31,8 @@ const Button = styled.TouchableOpacity`
 `;
 
 const KioskList = ({navigation}) => {
+  //const { posts } = useKiosk(); // KioskProvider의 컨텍스트 사용
+
   return(
     <SafeAreaView style={{ flex: 1 }}>
       <Container>
@@ -40,12 +42,8 @@ const KioskList = ({navigation}) => {
             <Text>글작성</Text>
           </Button>
         </TitleContainer>
-        {posts.map((post, index) => (
-          <PostItem key={index}>
-            <PostTitle>{post.title}</PostTitle>
-            <PostLocation>{post.location}</PostLocation>
-          </PostItem>
-        ))}
+        
+        
       </Container>
   
     </SafeAreaView>
