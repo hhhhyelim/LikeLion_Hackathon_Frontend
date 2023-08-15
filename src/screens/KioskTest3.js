@@ -23,13 +23,11 @@ const TitleContainer = styled.View`
 
 const ButtonText = styled.Text`
   color: black;
-  font-size: 25px;
+  font-size: 16px;
   font-weight: 500;
   text-align: center;
   
 `;
-
-
 const Button2 = styled.TouchableOpacity`
   background-color: #F1F1F1;
   padding-top: 12px;
@@ -54,15 +52,15 @@ const KoiskTest3= ({navigation}) => {
         <Container>
           <Head />
           <TitleContainer>
-            <Text style={{ fontSize: 30, fontWeight: '700' }}>키오스크 자격시험</Text>
+            <Text style={{ fontSize: 25, fontWeight: '700' }}>키오스크 자격시험</Text>
           </TitleContainer>
 
-          <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}>
+          <Text style={{fontSize:15, fontWeight: '400', textAlign: 'center'}}>
               {"\n"}다음 키오스크 화면을 보고 {"\n"}</Text>
-              <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center', color: 'blue'}}
+              <Text style={{fontSize:15, fontWeight: '400', textAlign: 'center', color: 'blue'}}
               >카드 결제</Text> 
               {/* '카드결제' 글자색상 파란색 */}
-              <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}
+              <Text style={{fontSize:15, fontWeight: '400', textAlign: 'center'}}
               >를 하기 위해 눌러야 할{"\n"}목록을 선택해주세요.{"\n"}{"\n"}{"\n"}</Text>
                     <ButtonRow>
             

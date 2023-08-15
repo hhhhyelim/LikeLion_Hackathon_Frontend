@@ -31,7 +31,7 @@ margin: 10px 18px;
 
 const ButtonText = styled.Text`
 color: black;
-font-size: 20px;
+font-size: 16px;
 font-weight: 400;
 text-align: center;
   
@@ -45,9 +45,9 @@ const KioskTest1 = ({navigation}) => {
         <Container>
           <Head />
           <TitleContainer>
-            <Text style={{ fontSize: 30, fontWeight: '700' }}>키오스크 자격시험</Text>
+            <Text style={{ fontSize: 25, fontWeight: '700' }}>키오스크 자격시험</Text>
           </TitleContainer>
-            <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}>
+            <Text style={{fontSize:18, fontWeight: '400', textAlign: 'center'}}>
               {"\n"}키오스크를 실제로 사용해보신 경험은 {"\n"}
                얼마나 되시나요? {"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>
           <Button onPress= {() => navigation.navigate('KioskTest2')}>  
