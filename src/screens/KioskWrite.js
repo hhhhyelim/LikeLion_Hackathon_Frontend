@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/native';
 import { Text, SafeAreaView } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'; 
-
+import axios from "axios";
 
 const Container = styled.View`
   flex: 1;
@@ -91,20 +91,22 @@ const KioskWrite = ({navigation}) => {
     setDisaled(!(title && location && content));
   }, [title, location, content]);
 
-  /*
-  const handlePostSubmit = () => {
-    const newPost = {
-      id: new Date().getTime(), // 임시로 시간을 ID로 사용
-      title,
-      location,
-      content,
-    };
+ 
+  const handlePostSubmit = async () => {
+    try {
+      const response = await axios.post('', {
+        title,
+        location,
+        content,
+      });
 
-    addPost(newPost); // 게시물 추가
-    navigation.navigate('KioskList'); // 게시물 리스트로 이동
+      console.log('response Data', response.data);
+      navigation.navigate('KioskList');
+    } catch (error) {
+      console.error('Eroor:', error);
+    }
   };
 
-*/
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <KeyboardAwareScrollView
@@ -143,7 +145,7 @@ const KioskWrite = ({navigation}) => {
             placeholder="내용을 작성해주세요"
           />
         </Contents>
-        <SubmitButton onPress={() => navigation.navigate('KioskList')} disabled={disabled} isFilled={!disabled}>  
+        <SubmitButton onPress={handlePostSubmit} disabled={disabled} isFilled={!disabled}>  
             <ButtonText isFilled={!disabled}>게시물 올리기</ButtonText>
         </SubmitButton>
       </Container>
