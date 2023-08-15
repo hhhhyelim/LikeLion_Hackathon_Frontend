@@ -22,19 +22,18 @@ const TitleContainer = styled.View`
 `;
 
 const Button = styled.TouchableOpacity`
-  background-color: #F1F1F1;
-  padding: 20px 20px;
-  border-radius: 30px;
-  margin: 12px 18px;
-  
+background-color: #F1F1F1;
+padding: 10px;
+border-radius: 30px;
+margin: 10px 18px;
 
 `;
 
 const ButtonText = styled.Text`
-  color: 'black';
-  font-size: 25px;
-  font-weight: 500;
-  text-align: center;
+color: black;
+font-size: 20px;
+font-weight: 400;
+text-align: center;
   
 `;
 
@@ -51,17 +50,17 @@ const KioskTest1 = ({navigation}) => {
             <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}>
               {"\n"}키오스크를 실제로 사용해보신 경험은 {"\n"}
                얼마나 되시나요? {"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>
-          <Button>  
-            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>전혀 사용해 본 적이 없다.</ButtonText>
+          <Button onPress= {() => navigation.navigate('KioskTest2')}>  
+            <ButtonText >전혀 사용해 본 적이 없다.</ButtonText>
           </Button>
-          <Button>  
-            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>1 ~ 5번 미만</ButtonText>
+          <Button onPress= {() => navigation.navigate('KioskTest2')}>  
+            <ButtonText >1 ~ 5번 미만</ButtonText>
           </Button>
-          <Button>  
-            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>5번 이상</ButtonText>
+          <Button onPress= {() => navigation.navigate('KioskTest2')}>  
+            <ButtonText>5번 이상</ButtonText>
           </Button>
-          <Button>  
-            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>처음 보는 키오스크도 자유롭게 사용 가능</ButtonText>
+          <Button onPress= {() => navigation.navigate('KioskTest2')}>  
+            <ButtonText>처음 보는 키오스크도 자유롭게 사용 가능</ButtonText>
           </Button>
         
         

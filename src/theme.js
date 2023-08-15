@@ -30,5 +30,5 @@ export const theme={
   spinnerIndicator: colors.white,
   homeBackground: colors.yellow,
   testButton: colors.lightyellow,
-  locationBg: colors.beige,
+  writeBg: colors.beige,
 }

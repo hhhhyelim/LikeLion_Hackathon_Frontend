@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { Text, SafeAreaView, ScrollView } from 'react-native';
-import BottomTab from '../navigations/BottomTab';
 
 const Container = styled.View`
   flex: 1;
@@ -12,14 +11,14 @@ const Head = styled.View`
   position: absolute;
   top: 0;
   width: 100%;
-  height: 281px;
+  height: 50%;
   background-color: ${({ theme }) => theme.homeBackground};
   border-radius: 0px 0px 30px 30px;
 `;
 
 const TitleContainer = styled.View`
   align-items: center;
-  margin-top: 91px;
+  margin-top: 23%;
 `;
 
 
@@ -27,7 +26,7 @@ const Button1 = styled.TouchableOpacity`
   background-color: ${({ theme }) => theme.testButton};
   padding: 10px 20px;
   border-radius: 10px;
-  margin: 12px 18px;
+  margin: 5% 18px;
 `;
 
 const ButtonText = styled.Text`
@@ -60,6 +59,7 @@ const KioskButtonText = styled.Text`
   font-size: 13px;
   font-weight: 300;
   text-align: center;
+  margin-top: 80%;
   
 `;
 const DeliveryButtonText = styled.Text`
@@ -67,6 +67,8 @@ const DeliveryButtonText = styled.Text`
   font-size: 13px;
   font-weight: 300;
   text-align: center;
+  margin-top: 80%;
+  margin-top: 80%;
   
 `;
 const SearchButtonText = styled.Text`
@@ -74,6 +76,7 @@ const SearchButtonText = styled.Text`
   font-size: 13px;
   font-weight: 300;
   text-align: center;
+  margin-top: 80%;
   
 `;
 const TrainButtonText = styled.Text`
@@ -81,7 +84,7 @@ const TrainButtonText = styled.Text`
   font-size: 13px;
   font-weight: 300;
   text-align: center;
-  
+  margin-top: 80%;
 `;
 
 
@@ -107,7 +110,7 @@ const Home = ({ navigation }) => {
             <ButtonText2>시험보고 선생님이 되어보세요!</ButtonText2>
           </Button1>
           <ButtonRow>
-            <Button2 onPress={() => navigation.navigate('KioskLocation')}>
+            <Button2 onPress={() => navigation.navigate('KioskList')}>
               <KioskButtonText>키오스크</KioskButtonText>
             </Button2>
             <Button2>
