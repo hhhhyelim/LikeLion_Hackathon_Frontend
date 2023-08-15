@@ -4,6 +4,7 @@ import Home from '../screens/Home';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
+import { Mypage } from '../screens/Mypage';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,7 +28,7 @@ const BottomTab = () => {
       />
       <Tab.Screen
         name="마이페이지"
-        component={Home}
+        component={Mypage}
         options={{
           tabBarIcon: () => <Ionicons name="person" size={24} color="black" />,
         }}

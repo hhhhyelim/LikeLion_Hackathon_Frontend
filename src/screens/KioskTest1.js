@@ -23,15 +23,15 @@ const TitleContainer = styled.View`
 
 const Button = styled.TouchableOpacity`
   background-color: #F1F1F1;
-  padding: 15% 10%;
   border-radius: 30px;
   margin: 12px 18px;
-  
+  height : 7%;
+  padding : 3%;
 
 `;
 
 const ButtonText = styled.Text`
-  color: 'black';
+  color: black;
   font-size: 25px;
   font-weight: 500;
   text-align: center;
@@ -42,8 +42,8 @@ const ButtonText = styled.Text`
 const BlankContainer = styled.View`
   align-items: center;
   margin-top: 91px;
-  width: 174px;
-  height: 174px;
+  width: 10%;
+  height: 7%;
 `;
 
 

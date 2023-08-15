@@ -22,7 +22,7 @@ const TitleContainer = styled.View`
 `;
 
 const ButtonText = styled.Text`
-  color: 'black';
+  color: black;
   font-size: 25px;
   font-weight: 500;
   text-align: center;
@@ -48,6 +48,14 @@ const ButtonRow = styled.View`
 `;
 
 
+const ImgContainer = styled.View`
+  align-items: center;
+  margin-top: 91px;
+  width: 10%;
+  height: 7%;
+`;
+
+
 const KoiskTest3= ({navigation}) => {
     return (
       <SafeAreaView style={{ flex: 1 }}>
@@ -64,8 +72,12 @@ const KoiskTest3= ({navigation}) => {
               {/* '카드결제' 글자색상 파란색 */}
               <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}
               >를 하기 위해 눌러야 할{"\n"}목록을 선택해주세요.{"\n"}{"\n"}{"\n"}</Text>
-                    <ButtonRow>
-            
+                    
+          <ImgContainer>
+
+          </ImgContainer>
+          
+          <ButtonRow>
             <Button2 onPress={() => navigation.navigate('KioskResult')}>
               <ButtonText>민트모카</ButtonText>
             </Button2>

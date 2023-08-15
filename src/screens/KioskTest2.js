@@ -22,7 +22,7 @@ const TitleContainer = styled.View`
 `;
 
 const ButtonText = styled.Text`
-  color: 'black';
+  color: black;
   font-size: 25px;
   font-weight: 500;
   text-align: center;
@@ -32,7 +32,7 @@ const ButtonText = styled.Text`
 
 const Button2 = styled.TouchableOpacity`
   background-color: #F1F1F1;
-  padding-top: 12%;
+  padding-top: 3.5%;
   border-radius: 30px;
   margin: 12px 18px;
   width: 130px;
@@ -47,6 +47,13 @@ const ButtonRow = styled.View`
   margin: 10px 30px;
 `;
 
+
+const ImgContainer = styled.View`
+  align-items: center;
+  margin-top: 91px;
+  width: 10%;
+  height: 7%;
+`;
 
 const KoiskTest2= ({navigation}) => {
     return (
@@ -64,8 +71,13 @@ const KoiskTest2= ({navigation}) => {
               {/* '아이스 카페라떼' 글자색상 파란색 */}
               <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}
               >를 주문하기 위해 눌러야 할{"\n"}목록버튼을 선택해주세요.{"\n"}{"\n"}{"\n"}</Text>
-                    <ButtonRow>
-            
+          
+          <ImgContainer>
+
+          </ImgContainer>
+          
+          
+          <ButtonRow>
             <Button2 onPress={() => navigation.navigate('KioskTest3')}>
               <ButtonText>커피</ButtonText>
             </Button2>
