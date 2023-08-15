@@ -23,6 +23,10 @@ const Line = styled.View`
   border-radius: 10px;
 `;
 
+const Inform = styled.View`
+  
+`;
+
 const Mypage = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -32,9 +36,10 @@ const Mypage = () => {
           <Line />
         </TitleContainer>
         
-        
+        <Inform>
+
+        </Inform>
       </Container>
-      
     </SafeAreaView>
   );
 };
