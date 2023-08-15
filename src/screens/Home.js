@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { Text, SafeAreaView, ScrollView } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Container = styled.View`
   flex: 1;
