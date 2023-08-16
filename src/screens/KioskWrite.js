@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/native';
-import { Text, SafeAreaView } from 'react-native';
+import { Text, SafeAreaView,StyleSheet,View } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'; 
-
+import DropDownPicker from 'react-native-dropdown-picker';
+import axios from "axios";
 
 const Container = styled.View`
   flex: 1;
@@ -23,6 +24,8 @@ const Line = styled.View`
 `;
 const Contents = styled.View`
   margin: 7px 18px 1px 18px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   flex-direction: row; 
   align-items: center;
 `;
@@ -70,17 +73,28 @@ color: ${({ isFilled }) =>
   font-size: 15px;
   font-weight: 400;
   text-align: center;
-  
 `;
 
 const KioskWrite = ({navigation}) => {
   //const { addPost } = useKiosk(); // KioskProvider로부터 addPost 함수를 가져옴
 
   const [title, setTitle] = useState(""); // 제목 저장
-  const [location, setLocation]=useState("");
+  //const [location, setLocation]=useState("");
   const [content, setContent] = useState("");
   const [disabled, setDisaled] = useState(true);
   
+  const [open, setOpen] = useState(false);
+  
+  // 라이브러리에 기본값을 설정할 수 있는 defaultValue 속성이 없어졌다고 하여 value를 초기화할 때 기본값을 지정해주었다.
+  const [value, setValue] = useState({label: '송파구', value: '1'});
+
+  // 드롭다운 메뉴에 들어갈 아이템들 {label: '메뉴명', value: '값} 형태
+  const [location, setLocation] = useState([
+    { label: '송파구', value: '1' },
+    { label: '강서구', value: '2' },
+    { label: '노원구', value: '3' },
+    { label: '은평구', value: '4' },
+  ]);
   
 
   const onChangeTitle = (payload) => setTitle(payload);
@@ -91,20 +105,23 @@ const KioskWrite = ({navigation}) => {
     setDisaled(!(title && location && content));
   }, [title, location, content]);
 
+ 
   /*
-  const handlePostSubmit = () => {
-    const newPost = {
-      id: new Date().getTime(), // 임시로 시간을 ID로 사용
-      title,
-      location,
-      content,
-    };
+  const handlePostSubmit = async () => {
+    try {
+      const response = await axios.post('/', {
+        title,
+        location,
+        content,
+      });
 
-    addPost(newPost); // 게시물 추가
-    navigation.navigate('KioskList'); // 게시물 리스트로 이동
+      console.log('response Data', response.data);
+      navigation.navigate('KioskList');
+    } catch (error) {
+      console.error('Eroor:', error);
+    }
   };
-
-*/
+ */
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <KeyboardAwareScrollView
@@ -127,12 +144,17 @@ const KioskWrite = ({navigation}) => {
         </Contents>
         <Contents>
           <TextLabel>지역</TextLabel>
-          <Input
-            returnKeyType="next"
-            onChangeText={onChangeLocation}
-            value={location}
-            placeholder="지역을 선택하세요"
-          />
+          <View style={styles.container}>
+            <DropDownPicker 
+              open={open}
+              value={value}
+              items={location}
+              placeholder="송파구"
+              setOpen={setOpen}
+              setValue={setValue}
+              setItems={setLocation}
+            /> 
+          </View>
         </Contents>
         <Contents>
           <Input2
@@ -151,5 +173,16 @@ const KioskWrite = ({navigation}) => {
     </SafeAreaView>
   );
 }
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 4,
+    backgroundColor: 'white',
+    zIndex: 1000,
+  },
+
+});
+
 
 export default KioskWrite;

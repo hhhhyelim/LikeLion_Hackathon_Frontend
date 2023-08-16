@@ -156,11 +156,11 @@ const Signup = ({}) => {
           <View style={{ flexDirection: 'row', alignItems: 'center', margin: 20 }}>
             <Text style={{ color: '#a6a6a6', fontSize: 16, marginRight: 40 }}>성별</Text>
             <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 10 }}>
-              <RadioButton value="first" color="orange" />
+              <RadioButton value="male" color="orange" />
               <Text style={{ color: 'black' }}>남성</Text>
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <RadioButton value="second" color="orange" />
+              <RadioButton value="female" color="orange" />
               <Text style={{ color: 'black' }}>여성</Text>
             </View>
           </View>
@@ -179,7 +179,7 @@ const Signup = ({}) => {
         />
 
         <ErrorText>{errorMessage}</ErrorText>
-        <Button title="회원가입" onPress={_handleSignupButtonPress} disabled={disabled} />
+        <Button title="가입하기" onPress={_handleSignupButtonPress} disabled={disabled} />
       </Container>
     </KeyboardAwareScrollView>
   );

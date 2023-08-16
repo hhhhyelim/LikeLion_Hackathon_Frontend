@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { Text, SafeAreaView, ScrollView } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Container = styled.View`
   flex: 1;
@@ -113,7 +114,7 @@ const Home = ({ navigation }) => {
             <Button2 onPress={() => navigation.navigate('KioskList')}>
               <KioskButtonText>키오스크</KioskButtonText>
             </Button2>
-            <Button2>
+            <Button2 onPress={() => navigation.navigate('KioskDetail')}>
               <DeliveryButtonText>배달</DeliveryButtonText>
             </Button2>
           </ButtonRow>

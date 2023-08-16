@@ -10,6 +10,7 @@ import KioskTest3 from '../screens/KioskTest3';
 import KioskResult from '../screens/KioskResult';
 import KioskList from '../screens/KioskList';
 import KioskWrite from '../screens/KioskWrite';
+import KioskDetail from '../screens/KioskDetail';
 
 const Stack = createStackNavigator();
 
@@ -37,6 +38,7 @@ const AuthStack = () => {
       <Stack.Screen name="KioskWrite" component={KioskWrite} options={{ 
         headerTitle: '',
       }} />
+      <Stack.Screen name="KioskDetail" component={KioskDetail} options={{ headerTitle: '' }} />
 
       <Stack.Screen name="TestMain" component={TestMain}  options={{  headerShown: false }}/>
       <Stack.Screen name="KioskTest1" component={KioskTest1} options={{ headerShown: false }} />

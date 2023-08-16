@@ -23,7 +23,7 @@ const TitleContainer = styled.View`
 
 const ButtonText = styled.Text`
   color: black;
-  font-size: 25px;
+  font-size: 16px;
   font-weight: 500;
   text-align: center;
   
@@ -54,15 +54,15 @@ const KoiskTest2= ({navigation}) => {
         <Container>
           <Head />
           <TitleContainer>
-            <Text style={{ fontSize: 30, fontWeight: '700' }}>키오스크 자격시험</Text>
+            <Text style={{ fontSize: 25, fontWeight: '700' }}>키오스크 자격시험</Text>
           </TitleContainer>
 
-          <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}>
+          <Text style={{fontSize:15, fontWeight: '400', textAlign: 'center'}}>
               {"\n"}다음 키오스크 화면을 보고{"\n"}</Text>
-              <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center', color: 'blue'}}
+              <Text style={{fontSize:15, fontWeight: '400', textAlign: 'center', color: 'blue'}}
               >아이스 카페라떼</Text> 
               {/* '아이스 카페라떼' 글자색상 파란색 */}
-              <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}
+              <Text style={{fontSize:15, fontWeight: '400', textAlign: 'center'}}
               >를 주문하기 위해 눌러야 할{"\n"}목록버튼을 선택해주세요.{"\n"}{"\n"}{"\n"}</Text>
                     <ButtonRow>
             
