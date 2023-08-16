@@ -98,10 +98,10 @@ const Signup = ({navigation}) => {
         phoneNumber,
       };
 
-      const apiUrl = "http://localhost:8080/auth/signUp";
+      const apiUrl = "http://192.168.1.24:8080/api/signup";
       const response = await axios.post(apiUrl, userData);
       console.log("회원가입 성공", response.data);
-      navigation.navigate('Login');
+      //navigation.navigate('Login');
     }catch(e) {
       Alert.alert("회원가입 오류", e.message);
     }finally{
