@@ -84,14 +84,13 @@ const Imagee= styled.ImageBackground`
 
 
 const KoiskTest6= ({navigation}) => {
-
   const [score, setScore] = useState(0);
 
   const handleAnswerButtonClick = (correctAnswer) => {
     if (correctAnswer) {
       setScore(score + 1);
     }
-    navigation.navigate('KioskTest5', { score: score + (correctAnswer ? 1 : 0) });
+    navigation.navigate('KioskResult', { score: score + (correctAnswer ? 1 : 0) });
   };
 
     return (

@@ -69,7 +69,7 @@ const Imagee= styled.ImageBackground`
 `;
 
 
-const KoiskTest2= ({navigation}) => {
+const KioskTest2= ({navigation}) => {
 
   const [score, setScore] = useState(0);
 
@@ -85,9 +85,9 @@ const KoiskTest2= ({navigation}) => {
       <SafeAreaView style={{ flex: 1 }}>
         <Container>
           <Head />
-          <TitleContainer>
+          {/* <TitleContainer>
             <Text style={{ fontSize: 30, fontWeight: '700' }}>키오스크 자격시험</Text>
-          </TitleContainer>
+          </TitleContainer> */}
 
           <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}>
               {"\n"}다음 키오스크 화면을 보고{"\n"}</Text>
@@ -97,6 +97,8 @@ const KoiskTest2= ({navigation}) => {
               <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}
               >를 주문하기 위해 눌러야 할{"\n"}목록버튼을 선택해주세요.{"\n"}{"\n"}{"\n"}</Text>
             
+            <Imagee source={test2} />
+
           <ButtonRow>
             <Button2 onPress={() => handleAnswerButtonClick(true)}>
               <ButtonText>커피</ButtonText>
@@ -120,4 +122,4 @@ const KoiskTest2= ({navigation}) => {
     );
   };
   
-  export default KoiskTest2;
+  export default KioskTest2;

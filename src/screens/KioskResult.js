@@ -79,7 +79,7 @@ const IconText = styled.Text`
 
 const KioskResult = ({ navigation, route }) => {
   const { score } = route.params;
-  const passed = score >= 10; // 점수가 10점 이상인 경우 통과
+  const passed = score >= 3; // 점수가 점 이상인 경우 통과
 
   return (
       <SafeAreaView style={{ flex: 1 }}>

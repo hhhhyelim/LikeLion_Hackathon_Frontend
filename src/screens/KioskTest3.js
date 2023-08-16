@@ -69,7 +69,7 @@ const Imagee= styled.ImageBackground`
 `;
 
 
-const KoiskTest3= ({navigation}) => {
+const KiskTest3= ({navigation}) => {
 
   const [score, setScore] = useState(0);
 
@@ -100,19 +100,23 @@ const KoiskTest3= ({navigation}) => {
               <Imagee source={test3} />
           
           <ButtonRow>            
-            <Button2 onPress={() => navigation.navigate('KioskResult')}>
+{/* 
+          <Button2 onPress={() => navigation.navigate('KioskResult')}>
               <ButtonText>민트모카</ButtonText>
+            </Button2> */}
+            <Button2 onPress={() => handleAnswerButtonClick(false)}>
+              <ButtonText>시즌메뉴</ButtonText>
             </Button2>
-            <Button2 onPress={() => navigation.navigate('KioskResult')}>
-              <ButtonText>전체 취소</ButtonText>
+            <Button2 onPress={() => handleAnswerButtonClick(false)}>
+              <ButtonText>커피(HOT)</ButtonText>
             </Button2>
           </ButtonRow>
           <ButtonRow>
-            <Button2 onPress={() => navigation.navigate('KioskResult')}>
-              <ButtonText>현금</ButtonText>
+            <Button2 onPress={() => handleAnswerButtonClick(true)}>
+              <ButtonText>결제하기</ButtonText>
             </Button2>
-            <Button2 onPress={() => navigation.navigate('KioskResult')}>
-              <ButtonText>카드</ButtonText>
+            <Button2 onPress={() => handleAnswerButtonClick(false)}>
+              <ButtonText>전체삭제</ButtonText>
             </Button2>
           </ButtonRow>
           
@@ -122,4 +126,4 @@ const KoiskTest3= ({navigation}) => {
     );
   };
   
-  export default KoiskTest3;
+  export default KioskTest3;
