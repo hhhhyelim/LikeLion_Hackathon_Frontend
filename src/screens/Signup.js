@@ -4,11 +4,11 @@ import {Text, Alert, View} from 'react-native';
 
 import {Input, Button} from '../components';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { validateEmail, removeWhitespace } from '../utils/common';
+import { removeWhitespace } from '../utils/common';
 import { ProgressContext } from '../contexts';
 import DatePicker from 'react-datepicker';
 import {RadioButton } from 'react-native-paper';
-
+import axios from "axios";
 
 const Container = styled.View`
   flex: 1;
@@ -22,24 +22,23 @@ const Container = styled.View`
 const ErrorText = styled.Text`
   align-items:flex-start;
   width: 100%;
-  height: 20px;
+  height: 30px;
   margin-bottom: 10px;
   line-height: 20px;
   color: ${({theme})=>theme.errorText};
 `;
 
-const Signup = ({}) => {
+const Signup = ({navigation}) => {
   const {spinner} = useContext(ProgressContext);
 
   const [name, setName] =useState('');
-  const [email, setEmail] =useState('');
+  const [username, setEmail] =useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirm, setPasswordConfirm] = useState('');
   const [birth, setBirth] =useState('');
   const [gender, setGender] = useState();
-  const [phone, setPhone] = useState('');
-  const [selectedIdx, setSelectedIdx] = useState();
-  const genderSelect = ['male', 'female'];
+  const [phoneNumber, setPhone] = useState('');
+  
 
   const [errorMessage, setErrorMessage] = useState('');
   const [disabled, setDisaled] = useState(true);
@@ -55,46 +54,61 @@ const Signup = ({}) => {
   useEffect(() => {
     if(didMountRef.current){
       let _errorMessage ='';
-      if(!email){
-        _errorMessage ='이메일을 입력하세요';
-      } else if(!validateEmail(email)){
-       _errorMessage ='유효하지 않은 이메일 형식입니다';
+      if(!username){
+        _errorMessage ='아이디를 입력하세요 (최소10글자)';
       } else if(password !== passwordConfirm){
         _errorMessage ='비밀번호가 다릅니다';
       } else if(!name){
         _errorMessage ='이름을 입력하세요';
       }else if(!birth){
         _errorMessage ='생년월일을 입력하세요';
-      }else if(!phone){
+      }else if(!phoneNumber){
         _errorMessage ='휴대전화 번호를 입력하세요';
       } else if(!gender){
         _errorMessage ='성별을 선택하세요';
       }
       else {
-        _errorMessage ='';
+        _errorMessage = '';
       }
       setErrorMessage(_errorMessage);
     }else {
       didMountRef.current=true;
     }
-  }, [name, email, password, passwordConfirm, birth, phone, gender]);
+  }, [name, username, password, passwordConfirm, birth, phoneNumber, gender]);
 
   useEffect(() => {
-    setDisaled(!(name && email && password && passwordConfirm && birth && gender && phone &&!errorMessage));
-  }, [name, email, password, passwordConfirm, birth, phone, gender, errorMessage]);
+    setDisaled(!(name && username && password && passwordConfirm && birth && gender && phoneNumber &&!errorMessage));
+  }, [name, username, password, passwordConfirm, birth, phoneNumber, gender, errorMessage]);
 
   const _handleSignupButtonPress = async () => {
     try{
+      if (username.length < 8) {
+        Alert.alert("아이디는 8글자 이상 작성해야 합니다.");
+        return;
+      }
+
       spinner.start();
       //const user = await signup({email, password, name});
-      console.log(user);
-      Alert.alert("회원가입 성공", user.email);
+      const userData = {
+        username,
+        password,
+        name,
+        birth,
+        gender,
+        phoneNumber,
+      };
+
+      const apiUrl = "http://localhost:8080/auth/signUp";
+      const response = await axios.post(apiUrl, userData);
+      console.log("회원가입 성공", response.data);
+      navigation.navigate('Login');
     }catch(e) {
       Alert.alert("회원가입 오류", e.message);
     }finally{
       spinner.stop();
     }
   };
+
 
   return (
     <KeyboardAwareScrollView extraScrollHeight={20}>
@@ -114,11 +128,11 @@ const Signup = ({}) => {
         />
         <Input 
           ref={emailRef}
-          label="이메일(아이디)"
-          value={email}
+          label="아이디"
+          value={username}
           onChangeText={text => setEmail(removeWhitespace(text))}
           onSubmitEditing={()=>passwordRef.current.focus()}
-          placeholder="이메일"
+          placeholder="아이디"
           returnKeyType="next" 
         />
         <Input 
@@ -171,7 +185,7 @@ const Signup = ({}) => {
         <Input 
           ref={phoneRef}
           label="휴대전화"
-          value={phone}
+          value={phoneNumber}
           onChangeText={text => setPhone(removeWhitespace(text))}
           onSubmitEditing={_handleSignupButtonPress}
           placeholder="예시) 010-1234-5678"

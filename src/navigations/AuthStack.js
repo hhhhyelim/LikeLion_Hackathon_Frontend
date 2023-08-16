@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'styled-components/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Login, Signup, First, Home } from '../screens';
+import { Login, Signup,  Home } from '../screens';
 import BottomTab from './BottomTab'; // BottomTab 추가
 import TestMain from '../screens/TestMain';
+import First from '../screens/First';
 import KioskTest1 from '../screens/KioskTest1';
 import KioskTest2 from '../screens/KioskTest2';
 import KioskTest3 from '../screens/KioskTest3';
