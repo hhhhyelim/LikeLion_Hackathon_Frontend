@@ -27,14 +27,12 @@ const TitleContainer = styled.View`
 `;
 
 const ButtonText = styled.Text`
-  color: black;
+  color: 'black';
   font-size: 20px;
   font-weight: 500;
   textAlign: center;
   
 `;
-
-
 const Button2 = styled.TouchableOpacity`
   background-color: #F1F1F1;
   padding-top: 3%;
@@ -43,7 +41,7 @@ const Button2 = styled.TouchableOpacity`
   width: 130px;
   height: 50px;
   border: 1px solid #C9BCBC;
-  flexDirection: "row";
+  flexDirection: row;
 `;
 
 const ButtonRow = styled.View`
@@ -88,35 +86,36 @@ const KoiskTest3= ({navigation}) => {
         <Container>
           <Head />
           {/* <TitleContainer>
-            <Text style={{ fontSize: 20, fontWeight: '900',color : 'blue', textAlign: 'center'}}>3번 문항</Text>
+            <Text style={{ fontSize: 30, fontWeight: '700' }}>키오스크 자격시험</Text>
           </TitleContainer> */}
 
           <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}>
-              {"\n"}{"\n"}다음 키오스크 화면을 보고 </Text>
+              {"\n"}다음 키오스크 화면을 보고 {"\n"}</Text>
               <Text style={{fontSize:20, fontWeight: '700', textAlign: 'center', color: 'blue'}}
-              >카드로 결제</Text> 
+              >카드 결제</Text> 
               {/* '카드결제' 글자색상 파란색 */}
               <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}
-              >를 하기 위해 눌러야 할{"\n"}목록을 선택해주세요.{"\n"}</Text>
+              >를 하기 위해 눌러야 할{"\n"}목록을 선택해주세요.{"\n"}{"\n"}{"\n"}</Text>
                     
-            <Imagee source={test3} />
+              <Imagee source={test3} />
           
-        <ButtonRow>
-          <Button2 onPress={() => handleAnswerButtonClick(false)}>
-            <ButtonText>흑당 버블 라떼</ButtonText>
-          </Button2>
-          <Button2 onPress={() => handleAnswerButtonClick(false)}>
-            <ButtonText>전체 삭제</ButtonText>
-          </Button2>
-        </ButtonRow>
-        <ButtonRow>
-          <Button2 onPress={() => handleAnswerButtonClick(false)}>
-            <ButtonText>선택한 상품</ButtonText>
-          </Button2>
-          <Button2 onPress={() => handleAnswerButtonClick(true)}>
-            <ButtonText>결제하기</ButtonText>
-          </Button2>
-        </ButtonRow>
+          <ButtonRow>            
+            <Button2 onPress={() => navigation.navigate('KioskResult')}>
+              <ButtonText>민트모카</ButtonText>
+            </Button2>
+            <Button2 onPress={() => navigation.navigate('KioskResult')}>
+              <ButtonText>전체 취소</ButtonText>
+            </Button2>
+          </ButtonRow>
+          <ButtonRow>
+            <Button2 onPress={() => navigation.navigate('KioskResult')}>
+              <ButtonText>현금</ButtonText>
+            </Button2>
+            <Button2 onPress={() => navigation.navigate('KioskResult')}>
+              <ButtonText>카드</ButtonText>
+            </Button2>
+          </ButtonRow>
+          
         
         </Container>
       </SafeAreaView>

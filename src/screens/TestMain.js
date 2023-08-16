@@ -31,7 +31,7 @@ const Button = styled.TouchableOpacity`
 `;
 
 const ButtonText = styled.Text`
-  color: 'black';
+  color: black;
   font-size: 20px;
   font-weight: 400;
   text-align: center;
@@ -58,8 +58,8 @@ const TestMain = ({navigation}) => {
                 바로 시험이 시작되니 {"\n"}
 
                 주의하세요! {"\n"}{"\n"}</Text>
-          <Button>  
-            <ButtonText onPress= {() => navigation.navigate('KioskTest1')}>키오스크</ButtonText>
+          <Button  onPress= {() => navigation.navigate('KioskTest1')}>  
+            <ButtonText>키오스크</ButtonText>
           </Button>
           <Button>  
             <ButtonText>배달음식 주문</ButtonText>

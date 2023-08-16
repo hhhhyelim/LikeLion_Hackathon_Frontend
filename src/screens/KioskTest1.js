@@ -26,18 +26,18 @@ const TitleContainer = styled.View`
 
 const Button = styled.TouchableOpacity`
   background-color: #F1F1F1;
+  padding: 20px 20px;
   border-radius: 30px;
   margin: 12px 18px;
-  height : 8%;
-  padding : 3.5%;
+  
 
 `;
 
 const ButtonText = styled.Text`
-  color: black;
-  font-size: 20px;
+  color: 'black';
+  font-size: 25px;
   font-weight: 500;
-  textAlign: center;
+  text-align: center;
   
 `;
 
@@ -77,24 +77,21 @@ const BlankContainer = styled.View`
           <TitleContainer>
             <Text style={{ fontSize: 25, fontWeight: '700' }}>키오스크 자격시험</Text>
           </TitleContainer>
-            <Text style={{fontSize: 22, fontWeight: '400', textAlign: 'center'}}>
+            <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}>
               {"\n"}키오스크를 실제로 사용해보신 경험은 {"\n"}
-               얼마나 되시나요? </Text>
-          <BlankContainer>
-
-          </BlankContainer>
+               얼마나 되시나요? {"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>
           <Button>  
-            <ButtonText onPress= {() => handleAnswerButtonClick(false)}>전혀 사용해 본 적이 없다.</ButtonText>
+            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>전혀 사용해 본 적이 없다.</ButtonText>
           </Button>
           <Button>  
-            <ButtonText onPress= {() => handleAnswerButtonClick(false)}>1 ~ 5번 미만</ButtonText>
+            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>1 ~ 5번 미만</ButtonText>
           </Button>
           <Button>  
-            <ButtonText onPress= {() => handleAnswerButtonClick(false)}>5번 이상</ButtonText>
+            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>5번 이상</ButtonText>
           </Button>
-          <Button2>  
-            <ButtonText onPress= {() => handleAnswerButtonClick(true)}>처음 보는 키오스크도 자유롭게 사용 가능</ButtonText>
-          </Button2>
+          <Button>  
+            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>처음 보는 키오스크도 자유롭게 사용 가능</ButtonText>
+          </Button>
         
         
         </Container>
