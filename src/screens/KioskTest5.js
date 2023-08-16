@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {Text, SafeAreaView, TouchableOpacity} from 'react-native';
-import test3 from '../utils/Img/test3.png';
+import test5 from '../utils/Img/test5.png';
 import {Image} from 'react-native';
 import {useState} from 'react';
 
@@ -16,15 +16,15 @@ const Head = styled.View`
   position: absolute;
   top: 0;
   width: 100%;
-  height: 65%;
+  height: 60%;
   background-color: #FFF2D1;
   border-radius: 0px 0px 30px 30px;
   `;
 
-const TitleContainer = styled.View`
-  align-items: center;
-  margin-top: 50px;
-`;
+// const TitleContainer = styled.View`
+//   align-items: center;
+//   margin-top: 50px;
+// `;
 
 const ButtonText = styled.Text`
   color: black;
@@ -35,12 +35,26 @@ const ButtonText = styled.Text`
 `;
 
 
+const Button = styled.TouchableOpacity`
+  background-color: #F1F1F1;
+  border-radius: 30px;
+  margin-top: 10px;
+  margin: 12px 18px;
+  width: 150px;
+  height : 70px;
+  padding : 3%;
+  border: 1px solid #C9BCBC;
+  flexDirection: "row";
+
+
+`;
+
 const Button2 = styled.TouchableOpacity`
   background-color: #F1F1F1;
   padding-top: 3%;
   border-radius: 30px;
   margin: 18px;
-  width: 130px;
+  width: 150px;
   height: 50px;
   border: 1px solid #C9BCBC;
   flexDirection: "row";
@@ -49,7 +63,7 @@ const Button2 = styled.TouchableOpacity`
 const ButtonRow = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin: 5px 16px 5px 15px;
+  margin: 5px 10px 10px 5px;
 `;
 
 
@@ -63,15 +77,15 @@ const ButtonRow = styled.View`
 
 
 const Imagee= styled.ImageBackground`
-  margin-left: 7%;
+  margin-left: 5%;
   width: 95%;
-  height: 250px;
+  height: 200px;
   resizeMode : contain;
   position : 'center';
 `;
 
 
-const KoiskTest3= ({navigation}) => {
+const KoiskTest5= ({navigation}) => {
 
   const [score, setScore] = useState(0);
 
@@ -94,27 +108,27 @@ const KoiskTest3= ({navigation}) => {
           <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}>
               {"\n"}{"\n"}다음 키오스크 화면을 보고 </Text>
               <Text style={{fontSize:20, fontWeight: '700', textAlign: 'center', color: 'blue'}}
-              >카드로 결제</Text> 
+              >'덮밥류'을 주문할 때</Text> 
               {/* '카드결제' 글자색상 파란색 */}
               <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}
-              >를 하기 위해 눌러야 할{"\n"}목록을 선택해주세요.{"\n"}</Text>
+              >눌러야 할{"\n"}목록을 선택해주세요.{"\n"}</Text>
                     
-            <Imagee source={test3} />
+            <Imagee source={test5} />
           
         <ButtonRow>
-          <Button2 onPress={() => handleAnswerButtonClick(false)}>
-            <ButtonText>흑당 버블 라떼</ButtonText>
-          </Button2>
-          <Button2 onPress={() => handleAnswerButtonClick(false)}>
-            <ButtonText>전체 삭제</ButtonText>
-          </Button2>
+          <Button onPress={() => handleAnswerButtonClick(true)}>
+            <ButtonText>노란색 바탕, '주문하기' 버튼</ButtonText>
+          </Button>
+          <Button onPress={() => handleAnswerButtonClick(false)}>
+            <ButtonText>파란색 바탕, '주문하기' 버튼</ButtonText>
+          </Button>
         </ButtonRow>
         <ButtonRow>
           <Button2 onPress={() => handleAnswerButtonClick(false)}>
-            <ButtonText>선택한 상품</ButtonText>
+            <ButtonText>'일품메뉴' 버튼</ButtonText>
           </Button2>
-          <Button2 onPress={() => handleAnswerButtonClick(true)}>
-            <ButtonText>결제하기</ButtonText>
+          <Button2 onPress={() => handleAnswerButtonClick(false)}>
+            <ButtonText>'덮밥류' 버튼</ButtonText>
           </Button2>
         </ButtonRow>
         
@@ -123,4 +137,4 @@ const KoiskTest3= ({navigation}) => {
     );
   };
   
-  export default KoiskTest3;
+  export default KoiskTest5;

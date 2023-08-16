@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {Text, SafeAreaView, TouchableOpacity} from 'react-native';
+import {Image} from 'react-native';
+import {useState} from 'react';
+
 
 const Container = styled.View`
   flex: 1;
@@ -25,55 +28,73 @@ const Button = styled.TouchableOpacity`
   background-color: #F1F1F1;
   border-radius: 30px;
   margin: 12px 18px;
-  height : 7%;
-  padding : 3%;
+  height : 8%;
+  padding : 3.5%;
 
 `;
 
 const ButtonText = styled.Text`
   color: black;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
-  text-align: center;
+  textAlign: center;
   
 `;
 
 
+const Button2 = styled.TouchableOpacity`
+  background-color: #F1F1F1;
+  border-radius: 30px;
+  margin: 12px 18px;
+  height : 12%;
+  padding : 3%;
+
+`;
 const BlankContainer = styled.View`
   align-items: center;
-  margin-top: 91px;
-  width: 10%;
-  height: 7%;
+  width: 15%;
+  height: 15%;
 `;
 
 
+  const KioskTest1 = ({navigation}) => {
 
-const KioskTest1 = ({navigation}) => {
+
+    const [score, setScore] = useState(0);
+
+    const handleAnswerButtonClick = (correctAnswer) => {
+      if (correctAnswer) {
+        setScore(score + 1);
+      }
+      navigation.navigate('KioskTest2', { score: score + (correctAnswer ? 1 : 0) });
+    };
+
+
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <Container>
           <Head />
           <TitleContainer>
-            <Text style={{ fontSize: 30, fontWeight: '700' }}>키오스크 자격시험</Text>
+            <Text style={{ fontSize: 25, fontWeight: '700' }}>키오스크 자격시험</Text>
           </TitleContainer>
-            <Text style={{fontSize: 25, fontWeight: '400', textAlign: 'center'}}>
+            <Text style={{fontSize: 22, fontWeight: '400', textAlign: 'center'}}>
               {"\n"}키오스크를 실제로 사용해보신 경험은 {"\n"}
                얼마나 되시나요? </Text>
           <BlankContainer>
 
           </BlankContainer>
           <Button>  
-            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>전혀 사용해 본 적이 없다.</ButtonText>
+            <ButtonText onPress= {() => handleAnswerButtonClick(false)}>전혀 사용해 본 적이 없다.</ButtonText>
           </Button>
           <Button>  
-            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>1 ~ 5번 미만</ButtonText>
+            <ButtonText onPress= {() => handleAnswerButtonClick(false)}>1 ~ 5번 미만</ButtonText>
           </Button>
           <Button>  
-            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>5번 이상</ButtonText>
+            <ButtonText onPress= {() => handleAnswerButtonClick(false)}>5번 이상</ButtonText>
           </Button>
-          <Button>  
-            <ButtonText onPress= {() => navigation.navigate('KioskTest2')}>처음 보는 키오스크도 자유롭게 사용 가능</ButtonText>
-          </Button>
+          <Button2>  
+            <ButtonText onPress= {() => handleAnswerButtonClick(true)}>처음 보는 키오스크도 자유롭게 사용 가능</ButtonText>
+          </Button2>
         
         
         </Container>
