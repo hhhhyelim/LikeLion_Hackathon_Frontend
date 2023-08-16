@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import {Text, Alert} from 'react-native';
 import {Input, Button, Image} from '../components';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { validateEmail, removeWhitespace } from '../utils/common';
+import { removeWhitespace } from '../utils/common';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { ProgressContext } from '../contexts';
 //import {images} from '../utils/images';
@@ -21,7 +21,7 @@ const Container = styled.View`
 const ErrorText = styled.Text`
   align-items:flex-start;
   width: 100%;
-  height: 20px;
+  height: 30px;
   margin-bottom: 10px;
   line-height: 20px;
   color: ${({theme})=>theme.errorText};
@@ -45,10 +45,14 @@ const Login = ({ navigation }) => {
   const _handleEmailChange = email => {
     const changedEmail = removeWhitespace(email);
     setEmail(changedEmail);
-    setErrorMessage(
-      validateEmail(changedEmail) ? '':'올바른 이메일 형식이 아닙니다'
-    );
+  
+    if (changedEmail.length < 8) {
+      setErrorMessage("아이디는 최소 8글자 이상이어야 합니다.");
+    } else {
+      setErrorMessage("");
+    }
   };
+
   const _handlePasswordChange = password => {
     setPassword(removeWhitespace(password));
   };
@@ -73,11 +77,11 @@ const Login = ({ navigation }) => {
        
         <Text style={{fontSize:30}}>로그인</Text>
         <Input 
-          label="이메일"
+          label="아이디"
           value={email}
           onChangeText={_handleEmailChange}
           onSubmitEditing={()=>passwordRef.current.focus()}
-          placeholder="이메일"
+          placeholder="아이디(최소8글자)"
           returnKeyType="next" 
         />
         <Input 
