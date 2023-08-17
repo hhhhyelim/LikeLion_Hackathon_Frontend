@@ -6,7 +6,6 @@ import BottomTab from './BottomTab'; // BottomTab 추가
 import TestMain from '../screens/TestMain';
 import First from '../screens/First';
 import KioskTest from '../screens/KioskTest';
-import KioskTest2 from '../screens/KioskTest2';
 import KioskTest3 from '../screens/KioskTest3';
 import KioskResult from '../screens/KioskResult';
 import KioskList from '../screens/KioskList';
@@ -43,7 +42,6 @@ const AuthStack = () => {
 
       <Stack.Screen name="TestMain" component={TestMain}  options={{  headerShown: false }}/>
       <Stack.Screen name="KioskTest" component={KioskTest} options={{ headerShown: false }} />
-      <Stack.Screen name="KioskTest2" component={KioskTest2} options={{ headerShown: false }} />
       <Stack.Screen name="KioskTest3" component={KioskTest3} options={{ headerShown: false }} />
       <Stack.Screen name="KioskResult" component={KioskResult} options={{ headerShown: false }} />
 

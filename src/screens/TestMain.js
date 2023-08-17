@@ -50,7 +50,7 @@ const TestMain = ({navigation}) => {
 
             <Text style={{ fontSize: 25, fontWeight: '600' }}>선생님 자격시험</Text>
           </TitleContainer>
-            <Text style={{fontSize:13, fontWeight: '400', textAlign: 'center'}}>
+            <Text style={{fontSize:16, fontWeight: '400', textAlign: 'center'}}>
               {"\n"}각 테스트에 통과하시면 {"\n"}
                 해당 주제에 대한 선생님이 될 수 있는 {"\n"}
                 인증 뱃지가 주어집니다. {"\n"}{"\n"}
@@ -58,7 +58,7 @@ const TestMain = ({navigation}) => {
                 바로 시험이 시작되니 {"\n"}
 
                 주의하세요! {"\n"}{"\n"}</Text>
-          <Button  onPress= {() => navigation.navigate('KioskTest1')}>  
+          <Button  onPress= {() => navigation.navigate('KioskTest')}>  
             <ButtonText>키오스크</ButtonText>
           </Button>
           <Button>  
