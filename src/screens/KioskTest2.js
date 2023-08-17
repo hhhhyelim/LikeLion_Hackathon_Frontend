@@ -26,7 +26,6 @@ const Head = styled.View`
 // `;
 
 const ButtonText = styled.Text`
-  color: 'black';
   font-size: 22px;
   font-weight: 500;
   textAlign: center;

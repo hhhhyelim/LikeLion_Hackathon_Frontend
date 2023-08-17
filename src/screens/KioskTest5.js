@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components/native';
 import {Text, SafeAreaView, TouchableOpacity} from 'react-native';
 import test5 from '../utils/Img/test5.png';
-import {Image} from 'react-native';
 import {useState} from 'react';
 
 
@@ -27,7 +26,6 @@ const Head = styled.View`
 // `;
 
 const ButtonText = styled.Text`
-  color: black;
   font-size: 20px;
   font-weight: 500;
   textAlign: center;
@@ -87,7 +85,7 @@ const Imagee= styled.ImageBackground`
 
 const KioskTest5= ({navigation}) => {
 
-  const [score, setScore] = useState(route.params.score || 0); // KioskTest4에서 넘어온 점수
+  const [score, setScore] = useState(0);
 
   const handleAnswerButtonClick = (correctAnswer) => {
     if (correctAnswer) {
@@ -95,7 +93,7 @@ const KioskTest5= ({navigation}) => {
     }
     navigation.navigate('KioskResult', { score });
   };
-  // const { score } = route.params; // 전달받은 점수
+
 
     return (
       <SafeAreaView style={{ flex: 1 }}>

@@ -27,7 +27,6 @@ const TitleContainer = styled.View`
 `;
 
 const ButtonText = styled.Text`
-  color: 'black';
   font-size: 20px;
   font-weight: 500;
   textAlign: center;

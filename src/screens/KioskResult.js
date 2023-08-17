@@ -39,7 +39,6 @@ const Button = styled.TouchableOpacity`
 `;
 
 const ButtonText = styled.Text`
-  color: black;
   font-size: 25px;
   font-weight: 400;
   text-align: center;
@@ -76,19 +75,29 @@ const IconText = styled.Text`
 
 
 
+const Imagee= styled.ImageBackground`
+  margin-left: 5%;
+  width: 95%;
+  height: 200px;
+  resizeMode : contain;
+  position : 'center';
+`;
 
-const KioskResult = ({ navigation, route }) => {
-  const { score } = route.params;
-  const passed = score >= 3; // 점수가 점 이상인 경우 통과
 
-  return (
+
+
+const KioskResult = ({ }) => {
+
+    // const { score } = route.params;
+    // const passed = score >= 3;
+    return (
       <SafeAreaView style={{ flex: 1 }}>
         <Container>
           <Head />
           <TitleContainer>
             <Text style={{ fontSize: 30, fontWeight: '600' }}>선생님 자격시험</Text>
           </TitleContainer>
-        {passed ? (
+        {/* {passed ? (
             
 
             <>
@@ -104,29 +113,77 @@ const KioskResult = ({ navigation, route }) => {
             <IconContainer>
               <IconText style={{ color: 'blue', textAlign: 'center' }}>성공!</IconText>
               {/* 뱃지 아이콘 등의 JSX를 여기에 추가 */}
-              <IconText style={{ color: 'blue', textAlign: 'center' }}>
+              {/* <IconText style={{ color: 'blue', textAlign: 'center' }}>
                 '나는야 키오스크 마스터'
-                <Image source={test1} />
-              </IconText>
+                <Imagee source={KioskMaster} />
+              </IconText> 
             </IconContainer>
-          </>
+          </> */}
 
 
-        ) : (
+        {/* ) : (
           <ButtonText style={{ fontSize: 18, fontWeight: '500', textAlign: 'center' }}>
             {"\n"}키오스크 자격시험에 불합격하셨습니다.{"\n"}
             {"\n"}다음에 공부하고 다시 도전해주세요!
           </ButtonText>
-        )}
+        )}  */}
 
         <Button>  
-            <ButtonText2 onPress= {() => navigation.navigate('KioskWrite')}>학생모집 게시글 작성하러 가기 </ButtonText2>
+            {/* <ButtonText2 onPress= {() => navigation.navigate('KioskWrite')}>학생모집 게시글 작성하러 가기 </ButtonText2> */}
         </Button>
         </Container>
       </SafeAreaView>
     );
   };
+
+// const KioskResult = ({ navigation, route }) => {
+//   const { score } = route.params;
+//   const passed = score >= 3; // 점수가 점 이상인 경우 통과
+
+//   return (
+//       <SafeAreaView style={{ flex: 1 }}>
+//         <Container>
+//           <Head />
+//           <TitleContainer>
+//             <Text style={{ fontSize: 30, fontWeight: '600' }}>선생님 자격시험</Text>
+//           </TitleContainer>
+//         {passed ? (
+            
+
+//             <>
+//             <ButtonText style={{ fontSize: 18, fontWeight: '500', textAlign: 'center' }}>
+//               {"\n"}축하합니다 ! {"\n"}
+//             </ButtonText>
+//             <ButtonText style={{ fontSize: 18, fontWeight: '500', textAlign: 'center' }}>
+//               점으로 키오스크 자격시험에 통과하셨습니다. {"\n"}
+//               {"\n"}키오스크 마스터 뱃지를 부여받아
+//               {"\n"}키오스크 선생님의 자격이 주어졌습니다!{"\n"}
+//               {"\n"}지금 바로 게시글을 작성하고 학생을 모집해보세요!
+//             </ButtonText>
+//             <IconContainer>
+//               <IconText style={{ color: 'blue', textAlign: 'center' }}>성공!</IconText>
+//               {/* 뱃지 아이콘 등의 JSX를 여기에 추가 */}
+//               <IconText style={{ color: 'blue', textAlign: 'center' }}>
+//                 '나는야 키오스크 마스터'
+//                 <Imagee source={KioskMaster} />
+//               </IconText> 
+//             </IconContainer>
+//           </>
+
+
+//         ) : (
+//           <ButtonText style={{ fontSize: 18, fontWeight: '500', textAlign: 'center' }}>
+//             {"\n"}키오스크 자격시험에 불합격하셨습니다.{"\n"}
+//             {"\n"}다음에 공부하고 다시 도전해주세요!
+//           </ButtonText>
+//         )}
+
+//         <Button>  
+//             <ButtonText2 onPress= {() => navigation.navigate('KioskWrite')}>학생모집 게시글 작성하러 가기 </ButtonText2>
+//         </Button>
+//         </Container>
+//       </SafeAreaView>
+//     );
+//   };
   
   export default KioskResult;
-
-  

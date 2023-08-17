@@ -58,7 +58,7 @@ const TestMain = ({navigation}) => {
                 바로 시험이 시작되니 {"\n"}
 
                 주의하세요! {"\n"}{"\n"}</Text>
-          <Button  onPress= {() => navigation.navigate('KioskTest1')}>  
+          <Button  onPress= {() => navigation.navigate('KioskTest')}>  
             <ButtonText>키오스크</ButtonText>
           </Button>
           <Button>  

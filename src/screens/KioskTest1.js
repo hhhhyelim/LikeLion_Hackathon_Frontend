@@ -34,7 +34,6 @@ const Button = styled.TouchableOpacity`
 `;
 
 const ButtonText = styled.Text`
-  color: 'black';
   font-size: 25px;
   font-weight: 500;
   text-align: center;
@@ -42,19 +41,12 @@ const ButtonText = styled.Text`
 `;
 
 
-const Button2 = styled.TouchableOpacity`
-  background-color: #F1F1F1;
-  border-radius: 30px;
-  margin: 12px 18px;
-  height : 12%;
-  padding : 3%;
-
-`;
 const BlankContainer = styled.View`
   align-items: center;
   width: 15%;
   height: 15%;
 `;
+
 
 
   const KioskTest1 = ({navigation}) => {
@@ -79,7 +71,7 @@ const BlankContainer = styled.View`
           </TitleContainer> 
             <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}>
               {"\n"}키오스크를 실제로 사용해보신 경험은 {"\n"}
-               얼마나 되시나요? {"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>
+               얼마나 되시나요? {"\n"}{"\n"}{"\n"}</Text>
 
 
           <Button>  
