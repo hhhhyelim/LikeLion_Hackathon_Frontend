@@ -74,9 +74,9 @@ const BlankContainer = styled.View`
       <SafeAreaView style={{ flex: 1 }}>
         <Container>
           <Head />
-          {/* <TitleContainer>
+           <TitleContainer>
             <Text style={{ fontSize: 25, fontWeight: '700' }}>키오스크 자격시험</Text>
-          </TitleContainer> */}
+          </TitleContainer> 
             <Text style={{fontSize:20, fontWeight: '400', textAlign: 'center'}}>
               {"\n"}키오스크를 실제로 사용해보신 경험은 {"\n"}
                얼마나 되시나요? {"\n"}{"\n"}{"\n"}{"\n"}{"\n"}</Text>

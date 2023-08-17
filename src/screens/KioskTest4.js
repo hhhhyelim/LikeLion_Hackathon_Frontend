@@ -83,7 +83,7 @@ const Imagee= styled.ImageBackground`
 `;
 
 
-const KoiskTest4= ({navigation}) => {
+const KioskTest4= ({navigation}) => {
 
   const [score, setScore] = useState(0);
 
@@ -134,4 +134,4 @@ const KoiskTest4= ({navigation}) => {
     );
   };
   
-  export default KoiskTest4;
+  export default KioskTest4;

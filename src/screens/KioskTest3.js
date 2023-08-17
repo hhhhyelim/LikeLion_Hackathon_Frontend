@@ -69,7 +69,7 @@ const Imagee= styled.ImageBackground`
 `;
 
 
-const KiskTest3= ({navigation}) => {
+const KioskTest3= ({navigation}) => {
 
   const [score, setScore] = useState(0);
 
@@ -105,18 +105,18 @@ const KiskTest3= ({navigation}) => {
               <ButtonText>민트모카</ButtonText>
             </Button2> */}
             <Button2 onPress={() => handleAnswerButtonClick(false)}>
-              <ButtonText>시즌메뉴</ButtonText>
+              <ButtonText>흑당 버블 라떼</ButtonText>
             </Button2>
             <Button2 onPress={() => handleAnswerButtonClick(false)}>
-              <ButtonText>커피(HOT)</ButtonText>
+              <ButtonText>전체 삭제</ButtonText>
             </Button2>
           </ButtonRow>
           <ButtonRow>
+            <Button2 onPress={() => handleAnswerButtonClick(false)}>
+              <ButtonText>선택한 상품</ButtonText>
+            </Button2>
             <Button2 onPress={() => handleAnswerButtonClick(true)}>
               <ButtonText>결제하기</ButtonText>
-            </Button2>
-            <Button2 onPress={() => handleAnswerButtonClick(false)}>
-              <ButtonText>전체삭제</ButtonText>
             </Button2>
           </ButtonRow>
           

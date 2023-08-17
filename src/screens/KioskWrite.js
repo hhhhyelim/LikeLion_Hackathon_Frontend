@@ -122,6 +122,7 @@ const KioskWrite = ({navigation}) => {
     }
   };
  */
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <KeyboardAwareScrollView

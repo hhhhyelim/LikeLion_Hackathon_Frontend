@@ -18,8 +18,6 @@ import KioskTest5 from '../screens/KioskTest5';
 // import KioskTest10 from '../screens/KioskTest10';
 
 
-
-
 import KioskWrite from '../screens/KioskWrite';
 import KioskDetail from '../screens/KioskDetail';
 

@@ -85,15 +85,15 @@ const Imagee= styled.ImageBackground`
 `;
 
 
-const KoiskTest5= ({navigation}) => {
+const KioskTest5= ({navigation}) => {
 
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(route.params.score || 0); // KioskTest4에서 넘어온 점수
 
   const handleAnswerButtonClick = (correctAnswer) => {
     if (correctAnswer) {
       setScore(score + 1);
     }
-    navigation.navigate('KioskTest4', { score: score + (correctAnswer ? 1 : 0) });
+    navigation.navigate('KioskResult', { score });
   };
   // const { score } = route.params; // 전달받은 점수
 
@@ -137,4 +137,4 @@ const KoiskTest5= ({navigation}) => {
     );
   };
   
-  export default KoiskTest5;
+  export default KioskTest5;

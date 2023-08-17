@@ -92,7 +92,7 @@ const TrainButtonText = styled.Text`
 const ButtonRow = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  margin: 10px 18px;
+  margin: 1% ;
 `;
 
 

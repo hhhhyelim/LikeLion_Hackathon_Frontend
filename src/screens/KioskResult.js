@@ -120,7 +120,7 @@ const KioskResult = ({ navigation, route }) => {
         )}
 
         <Button>  
-            <ButtonText2 onPress= {() => navigation.navigate('KioskTest1')}>학생모집 게시글 작성하러 가기 </ButtonText2>
+            <ButtonText2 onPress= {() => navigation.navigate('KioskWrite')}>학생모집 게시글 작성하러 가기 </ButtonText2>
         </Button>
         </Container>
       </SafeAreaView>
