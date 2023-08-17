@@ -46,7 +46,7 @@ const ButtonRow = styled.View`
 `;
 
 
-const KoiskTest3= ({navigation}) => {
+const KioskTest3= ({navigation}) => {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <Container>
@@ -86,4 +86,4 @@ const KoiskTest3= ({navigation}) => {
     );
   };
   
-  export default KoiskTest3;
+  export default KioskTest3;
