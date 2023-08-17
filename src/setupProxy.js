@@ -4,7 +4,7 @@ export default function(app){
     app.use(
         "/api/signup",
       createProxyMiddleware( {
-        target: 'http://192.168.1.24:8080',
+        target: 'http://172.30.1.67:8080',
         changeOrigin: true
       })
     )
