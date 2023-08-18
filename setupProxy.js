@@ -1,10 +1,10 @@
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
-export default function(app){
+module.exports = function(app){
     app.use(
-        "/api/signup",
+        "/auth/signUp",
       createProxyMiddleware( {
-        target: 'http://192.168.1.24:8080',
+        target: 'http://localhost:8080',
         changeOrigin: true
       })
     )
