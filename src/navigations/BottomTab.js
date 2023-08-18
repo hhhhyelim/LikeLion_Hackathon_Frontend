@@ -2,6 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import Mypage from '../screens/Mypage';
+import Chat from '../screens/Chat';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
@@ -13,7 +14,7 @@ const BottomTab = () => {
     <Tab.Navigator initialRouteName="홈">
       <Tab.Screen
         name="채팅"
-        component={Home}
+        component={Chat}
         options={{
           tabBarIcon: () => <FontAwesome name="wechat" size={24} color="black" />,
         }}

@@ -114,15 +114,15 @@ const Home = ({ navigation }) => {
             <Button2 onPress={() => navigation.navigate('KioskList')}>
               <KioskButtonText>키오스크</KioskButtonText>
             </Button2>
-            <Button2 onPress={() => navigation.navigate('KioskDetail')}>
+            <Button2 onPress={() => navigation.navigate('DeliveryList')}>
               <DeliveryButtonText>배달</DeliveryButtonText>
             </Button2>
           </ButtonRow>
           <ButtonRow>
-            <Button2>
+            <Button2 onPress={() => navigation.navigate('SearchList')}>
               <SearchButtonText>검색</SearchButtonText>
             </Button2>
-            <Button2>
+            <Button2 onPress={() => navigation.navigate('TrainList')}>
               <TrainButtonText>기차표예매</TrainButtonText>
             </Button2>
           </ButtonRow>

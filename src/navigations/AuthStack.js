@@ -12,6 +12,12 @@ import KioskResult from '../screens/KioskResult';
 import KioskList from '../screens/KioskList';
 import KioskWrite from '../screens/KioskWrite';
 import KioskDetail from '../screens/KioskDetail';
+import DeliveryList from '../screens/DeliveryList';
+import DeliveryWrite from '../screens/DeliveryWrite';
+import TrainList from '../screens/TrainList';
+import TrainWrite from '../screens/TrainWrite';
+import SearchList from '../screens/SearchList';
+import SearchWrite from '../screens/SearchWrite';
 
 const Stack = createStackNavigator();
 
@@ -39,6 +45,25 @@ const AuthStack = () => {
       <Stack.Screen name="KioskWrite" component={KioskWrite} options={{ 
         headerTitle: '',
       }} />
+      <Stack.Screen name="DeliveryList" component={DeliveryList} options={{ 
+        headerTitle: '',
+      }} />
+      <Stack.Screen name="DeliveryWrite" component={DeliveryWrite} options={{ 
+        headerTitle: '',
+      }} />
+      <Stack.Screen name="TrainList" component={TrainList} options={{ 
+        headerTitle: '',
+      }} />
+      <Stack.Screen name="TrainWrite" component={TrainWrite} options={{ 
+        headerTitle: '',
+      }} />
+      <Stack.Screen name="SearchList" component={SearchList} options={{ 
+        headerTitle: '',
+      }} />
+      <Stack.Screen name="SearchWrite" component={SearchWrite} options={{ 
+        headerTitle: '',
+      }} />
+
       <Stack.Screen name="KioskDetail" component={KioskDetail} options={{ headerTitle: '' }} />
 
       <Stack.Screen name="TestMain" component={TestMain}  options={{  headerShown: false }}/>
@@ -46,6 +71,7 @@ const AuthStack = () => {
       <Stack.Screen name="KioskTest2" component={KioskTest2} options={{ headerShown: false }} />
       <Stack.Screen name="KioskTest3" component={KioskTest3} options={{ headerShown: false }} />
       <Stack.Screen name="KioskResult" component={KioskResult} options={{ headerShown: false }} />
+
 
     </Stack.Navigator>
   );

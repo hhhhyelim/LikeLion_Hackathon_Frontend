@@ -66,17 +66,17 @@ const Mypage = () => {
         </Picture>
         <InformRow>
           <Inform>이름</Inform>
-          <InformDetail>이진수</InformDetail>
+          <InformDetail></InformDetail>
         </InformRow>
         <Line2 />
         <InformRow>
           <Inform>성별</Inform>
-          <InformDetail>남자</InformDetail>
+          <InformDetail></InformDetail>
         </InformRow>
         <Line2 />
         <InformRow>
           <Inform>생년월일</Inform>
-          <InformDetail>1987.08.15</InformDetail>
+          <InformDetail></InformDetail>
         </InformRow>
         <Line2 />
       </Container>

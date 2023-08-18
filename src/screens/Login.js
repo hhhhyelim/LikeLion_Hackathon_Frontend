@@ -3,10 +3,10 @@ import styled from 'styled-components/native';
 import {Text, Alert} from 'react-native';
 import {Input, Button, Image} from '../components';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { removeWhitespace } from '../utils/common';
 import { useSafeAreaFrame } from 'react-native-safe-area-context';
 import { ProgressContext } from '../contexts';
 //import {images} from '../utils/images';
+
 
 const Container = styled.View`
   flex:1;
@@ -42,8 +42,8 @@ const Login = ({ navigation }) => {
     setDisaled(!(email && password && !errorMessage));
   }, [email, password, errorMessage]);
 
-  const _handleEmailChange = email => {
-    const changedEmail = removeWhitespace(email);
+  const _handleEmailChange = changedEmail => {
+
     setEmail(changedEmail);
   
     if (changedEmail.length < 8) {
@@ -54,7 +54,7 @@ const Login = ({ navigation }) => {
   };
 
   const _handlePasswordChange = password => {
-    setPassword(removeWhitespace(password));
+    setPassword(password);
   };
 
   const _handleLoginButtonPress = async() => {
